@@ -1,0 +1,184 @@
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+\newenvironment{sloppypar*}{\sloppy\ignorespaces}{\par}
+
+\geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+
+\usepackage{paracol}
+
+\ifxetexorluatex
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+\ifdarkmode%
+  \definecolor{PrimaryColor}{HTML}{C69749}
+  \definecolor{SecondaryColor}{HTML}{D49B54}
+  \definecolor{ThirdColor}{HTML}{1877E8}
+  \definecolor{BodyColor}{HTML}{ABABAB}
+  \definecolor{EmphasisColor}{HTML}{ABABAB}
+  \definecolor{BackgroundColor}{HTML}{191919}
+\else%
+  \definecolor{PrimaryColor}{HTML}{001F5A}
+  \definecolor{SecondaryColor}{HTML}{0039AC}
+  \definecolor{ThirdColor}{HTML}{F3890B}
+  \definecolor{BodyColor}{HTML}{666666}
+  \definecolor{EmphasisColor}{HTML}{2E2E2E}
+  \definecolor{BackgroundColor}{HTML}{E2E2E2}
+\fi%
+
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{SecondaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{ThirdColor}
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{SecondaryColor}
+\colorlet{emphasis}{EmphasisColor}
+\colorlet{body}{BodyColor}
+\pagecolor{BackgroundColor}
+
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+
+\begin{document}
+\name{Andres Kenichi Koga Nakay}
+% \tagline{Test Developer}
+% \photoL{4cm}{john-doe}
+
+\personalinfo{
+	\email{akoga@pucp.edu.pe}
+	\phone{+51 964322765}
+	\location{Lima, Perú}\\
+	%\homepage{nicolasomar.me}
+	%\medium{nicolasomar}
+	\NewInfoField{github}{\faGithub}[https://github.com/]
+	\github{KKogaa}
+	\printinfo{\faLinkedin}{@Koga}[https://www.linkedin.com/in/andres-kenichi-koga-nakay-14b11b219/]
+}
+
+\makecvheader
+
+\columnratio{0.25}
+
+\begin{paracol}{2}
+	% ----- TECH STACK -----
+	\cvsection{Backend}
+	\begin{sloppypar*}
+		\medskip
+		\cvtags{Spring Boot, Flask, FastAPI, Gin, React, NestJs, Postgresql, MongoDB, MySQL,
+			JUnit 5, Jest, Pytest, Pandas, Pytorch, Docker, AWS, Clean Code, Clean Architecture}
+		\medskip
+	\end{sloppypar*}
+	% ----- TECH STACK -----
+
+	\cvsection{Frontend}
+	\begin{sloppypar*}
+		\medskip
+		\cvtags{React, Tailwind}
+		\medskip
+	\end{sloppypar*}
+	% ----- TECH STACK -----
+
+	% ----- LEARNING -----
+	\cvsection{Lenguajes de Programación}
+	\begin{sloppypar}
+		\cvtags{Python, Java, Javascript, Typescript, Go}
+		\medskip
+	\end{sloppypar}
+	% ----- LEARNING -----
+
+	% ----- CERTIFICATES -----
+	\cvsection{Certificados}
+	Cambridge English FCE
+
+	DELF A2
+
+	AWS Academy Cloud Foundations
+
+	% \divider
+
+	% ----- MOST PROUD -----
+	\cvsection{Logros}
+	2do puesto en Hackathon de ScientOne
+	\divider
+	% ----- MOST PROUD -----
+	\newpage
+
+	\switchcolumn
+
+	% ----- ABOUT ME -----
+	\cvsection{Acerca de mí}
+	\begin{quote}
+		Graduado en Ingeniería Informática, con experiencia y una fuerte motivación en el desarrollo web, arquitec-
+		tura de sistemas y aprendizaje máquina. Mi pasión radica en contribuir al desarrollo de soluciones innovadoras
+		que impulsen la eficiencia, mejoren las experiencias de usuario y fomenten el crecimiento empresarial.
+	\end{quote}
+	% ----- ABOUT ME -----
+
+	% ----- EXPERIENCE -----
+	\cvsection{Experiencia laboral}
+	\cvevent{Backend Developer}{TiendaDa}{04/2022 -- 12/2022}{Lima, Perú}
+	\begin{itemize}
+		\item Análisis, diseño y desarrollo de soluciones para un e-commerce.
+		\item Uso de Flask y Spring Boot para el desarrollo de microservicios.
+		\item Implementación con programación reactiva para mejorar la escalabilidad y rendimiento de la aplicación.
+	\end{itemize}
+	\divider
+
+	\cvevent{Fullstack Developer}{PUCP}{04/2022 -- 12/2022}{Lima, Perú}
+	\begin{itemize}
+		\item Análisis, diseño y desarrollo para una plataforma de apoyo a los estudiantes.
+		\item Implementación de funcionalidades backend utilizando Spring Boot.
+		\item Implementación de funcionalidades frontend utilizando React.
+		\item Despligue de los microservicios en AWS.
+	\end{itemize}
+	% ----- EXPERIENCE -----
+
+	% ----- EDUCATION -----
+	\cvsection{Educación}
+	\cvevent{Ingeniería Informática}{Pontificia Universidad Católica del Perú }{2016 -- 2022}{Lima, Perú}
+	\divider
+	% ----- EDUCATION -----
+
+	% ----- PROJECTS -----
+	\cvsection{Proyectos}
+	\cvevent{Motor de búsqueda de imágenes}{\cvreference{\faGithub}{https://github.com/user/repo}\cvreference{}{}}{}{}
+	{
+		Desarrollo de un motor de búsqueda que permite realizar búsquedas de similitud sobre una colección de imágenes. Permite realizar consultas utilizando textos o imágenes.
+	}
+	\divider
+
+	\cvevent{Modelo de comprensión lectora}{\cvreference{\faGithub}{https://github.com/user/repo}\cvreference{}{}}{}{}
+	{
+		Desarrollo de un modelo BERT fine-tuned para resolver problemas de comprensión lectora en el lenguaje español.
+	}
+	\divider
+
+	\cvevent{Chatbot}{\cvreference{\faGithub}{https://github.com/user/repo}\cvreference{}{}}{}{}
+	{
+		Implementación de un chatbot que utiliza el modelo BERT para reconocer las intenciones de los usuarios y por ello puede responder a consultas automáticamente.
+	}
+	\divider
+
+	% \cvevent{Project 3 }{\cvreference{\faGitlab}{https://gitlab.com/user/repo}\cvreference{| \faGlobe}{https://project-demo.com/}}{Mm YYYY -- Mm YYYY}{}
+	% \begin{itemize}
+	% 	\item Item 1
+	% 	\item Item 2
+	% \end{itemize}
+
+	% ----- PROJECTS -----
+\end{paracol}
+\end{document}
